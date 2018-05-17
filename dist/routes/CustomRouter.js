@@ -28,7 +28,7 @@ class CustomRouter {
                 }
                 finally {
                     res.json(response ? response : {});
-                    res.send(res);
+                    //res.send(res);
                 }
             });
         }
@@ -37,7 +37,7 @@ class CustomRouter {
             res.status(500);
             response = new model.Response(new Date(), "Error interno del servidor");
             res.json(response ? response : {});
-            res.send(res);
+            //res.send(res);
         }
         finally {
         }
@@ -58,7 +58,7 @@ class CustomRouter {
                 }
                 finally {
                     res.json(response ? response : {});
-                    res.send(res);
+                    //res.send(res);
                 }
             });
         }
@@ -67,7 +67,7 @@ class CustomRouter {
             res.status(500);
             response = new model.Response(new Date(), "Error interno del servidor");
             res.json(response ? response : {});
-            res.send(res);
+            //res.send(res);
         }
         finally {
         }

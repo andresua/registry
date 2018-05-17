@@ -30,7 +30,7 @@ export class CustomRouter {
                         "Error interno del servidor");
                 } finally {
                     res.json(response?response:{});
-                    res.send(res);
+                    //res.send(res);
                 }
             });
         } catch(e) {
@@ -39,7 +39,7 @@ export class CustomRouter {
             response = new model.Response(new Date(),
                 "Error interno del servidor");
             res.json(response?response:{});
-            res.send(res);
+            //res.send(res);
         } finally {
         }
     }
@@ -58,7 +58,7 @@ export class CustomRouter {
                         "Error interno del servidor");
                 } finally {
                     res.json(response?response:{});
-                    res.send(res);
+                    //res.send(res);
                 }
             });
         } catch(e) {
@@ -67,7 +67,7 @@ export class CustomRouter {
             response = new model.Response(new Date(),
                 "Error interno del servidor");
             res.json(response?response:{});
-            res.send(res);
+            //res.send(res);
         } finally {
         }
     }
