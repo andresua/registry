@@ -23,7 +23,8 @@ class Registry {
                 }
                 else {
                     console.log("-----1");
-                    if (resultId.rows[0].length > 0) {
+                    console.log(resultId);
+                    if (resultId.rows.length > 0) {
                         pgPool_1.Database.getDB().pool.query('UPDATE "variables" ' +
                             'SET cost = $1 ' +
                             'WHERE url = $2', [cost, url], (err, result) => {
@@ -80,7 +81,7 @@ class Registry {
                 }
                 else {
                     console.log("-----1");
-                    if (resultId.rows[0].length > 0) {
+                    if (resultId.rows.length > 0) {
                         pgPool_1.Database.getDB().pool.query('UPDATE "variables" ' +
                             'SET cost = $1 ' +
                             'WHERE url = $2', [cost, url], (err, result) => {
@@ -98,6 +99,7 @@ class Registry {
                         });
                     }
                     else {
+                        message = "No se encontró url para actualizar";
                         callback(req, response, new model_1.Response(new Date(), message));
                     }
                 }
