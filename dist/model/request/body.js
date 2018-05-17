@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Body {
-    constructor(refund, stock, products) {
-        this.refund = refund;
-        this.stock = stock;
-        this.products = products;
+    constructor(url, operation, cost) {
+        this.url = url;
+        if (cost)
+            this.cost = cost;
+        if (operation)
+            this.operation = operation;
     }
 }
 exports.Body = Body;

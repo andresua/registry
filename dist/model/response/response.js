@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Response {
-    constructor(timeStamp, id, correlationId, stockId, productsIds, message) {
+    constructor(timeStamp, message, url) {
         this.timeStamp = timeStamp;
-        this.id = id;
-        this.correlationId = correlationId;
-        this.stockId = stockId;
-        this.productsIds = productsIds;
         this.message = message;
+        if (url)
+            this.url = url;
     }
 }
 exports.Response = Response;

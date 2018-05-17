@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const registrarDevolucion_1 = require("../database/registrarDevolucion");
+const registry_1 = require("../database/registry");
 class Controller {
     constructor() {
     }
-    registrarDevolucion(request, res, response, callback) {
+    updateUrl(request, res, response, callback) {
         let req = request.body;
-        registrarDevolucion_1.RegistrarDevolucion.registrarDevolucion(req, request, res, callback);
+        registry_1.Registry.updateUrl(req, request, res, callback);
+    }
+    getUrl(request, res, response, callback) {
+        let req = request.body;
+        registry_1.Registry.getUrl(req, request, res, callback);
     }
 }
 exports.Controller = Controller;

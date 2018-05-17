@@ -28,7 +28,7 @@ class App {
             res.json({});
         });
         this.express.use('/', router);
-        this.express.use('/arti-4208/inventory/api/v1_0_0/enroll_return', CustomRouter_1.default);
+        this.express.use('/arti-4208/registry', CustomRouter_1.default);
     }
 }
 exports.default = new App().express;
