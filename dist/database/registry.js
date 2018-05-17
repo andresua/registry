@@ -46,7 +46,6 @@ class Registry {
                             '(id, url, cost, operation) ' +
                             'VALUES($1, $2, $3, $4)', [new Date().getUTCDate(), url, cost, operation], (err, result) => {
                             if (err) {
-                                console.log(err);
                                 message = "Problemas al registrar la url en el Marketplace";
                                 id = null;
                                 callback(req, response, new model_1.Response(new Date(), message));
@@ -82,24 +81,12 @@ class Registry {
                 else {
                     console.log("-----1");
                     if (resultId.rows.length > 0) {
-                        pgPool_1.Database.getDB().pool.query('UPDATE "variables" ' +
-                            'SET cost = $1 ' +
-                            'WHERE url = $2', [cost, url], (err, result) => {
-                            if (err) {
-                                console.log(err);
-                                message = "Problemas al registrar la url en el Marketplace";
-                                id = null;
-                                callback(req, response, new model_1.Response(new Date(), message));
-                            }
-                            else {
-                                console.log("-----2");
-                                message = "La url se registró de forma exitosa";
-                                callback(req, response, new model_1.Response(new Date(), message));
-                            }
-                        });
+                        message = "La url se leyó de forma exitosa";
+                        url = resultId.rows[0].url;
+                        callback(req, response, new model_1.Response(new Date(), message, url));
                     }
                     else {
-                        message = "No se encontró url para actualizar";
+                        message = "No se encontró url actualizar";
                         callback(req, response, new model_1.Response(new Date(), message));
                     }
                 }
