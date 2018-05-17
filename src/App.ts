@@ -36,8 +36,9 @@ class App {
         
       });
     });
-    this.express.use('/', router);
+    this.express.use('/', CustomRouter);
     this.express.use('/arti-4208/registry', CustomRouter);
+    this.express.use('/arti-4208/registry/setUrl', CustomRouter);
   }
 
 }
