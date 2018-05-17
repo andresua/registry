@@ -66,7 +66,6 @@ class CustomRouter {
             console.log(e);
             res.status(500);
             response = new model.Response(new Date(), "Error interno del servidor");
-            console.log(response);
             res.json(response ? response : {});
             res.send(res);
         }

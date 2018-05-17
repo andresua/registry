@@ -23,7 +23,6 @@ class Registry {
                 }
                 else {
                     console.log("-----1");
-                    console.log(resultId);
                     if (resultId.rows.length > 0) {
                         pgPool_1.Database.getDB().pool.query('UPDATE "variables" ' +
                             'SET cost = $1 ' +

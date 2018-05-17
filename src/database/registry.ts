@@ -28,7 +28,6 @@ export class Registry {
                     callback(req, response, new Response(new Date(),
                             message));
                 } else {console.log("-----1");
-                        console.log(resultId);
                         if(resultId.rows.length > 0) {
                             Database.getDB().pool.query(
                                 'UPDATE "variables" ' +
