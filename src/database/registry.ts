@@ -53,6 +53,7 @@ export class Registry {
                                 'VALUES($1, $2, $3, $4)', [new Date().getUTCDate(), url, cost, operation],
                                 (err, result) => {
                                     if(err) {
+                                        console.log(err);
                                         message = "Problemas al registrar la url en el Marketplace";  
                                         id = null;
                                         callback(req, response, new Response(new Date(),
