@@ -27,8 +27,9 @@ class App {
         router.get('/', (req, res, next) => {
             res.json({});
         });
-        this.express.use('/', router);
+        this.express.use('/', CustomRouter_1.default);
         this.express.use('/arti-4208/registry', CustomRouter_1.default);
+        this.express.use('/arti-4208/registry/setUrl', CustomRouter_1.default);
     }
 }
 exports.default = new App().express;
