@@ -43,7 +43,7 @@ class Registry {
                     else {
                         pgPool_1.Database.getDB().pool.query('INSERT INTO "variables" ' +
                             '(id, url, cost, operation) ' +
-                            'VALUES($1, $2, $3, $4)', [new Date().getUTCDate(), url, cost, operation], (err, result) => {
+                            'VALUES($1, $2, $3, $4)', [new Date().getTime(), url, cost, operation], (err, result) => {
                             if (err) {
                                 console.log(err);
                                 message = "Problemas al registrar la url en el Marketplace";

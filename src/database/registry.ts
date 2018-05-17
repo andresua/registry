@@ -50,7 +50,7 @@ export class Registry {
                             Database.getDB().pool.query(
                                 'INSERT INTO "variables" ' +
                                 '(id, url, cost, operation) ' +
-                                'VALUES($1, $2, $3, $4)', [new Date().getUTCDate(), url, cost, operation],
+                                'VALUES($1, $2, $3, $4)', [new Date().getTime(), url, cost, operation],
                                 (err, result) => {
                                     if(err) {
                                         console.log(err);
