@@ -82,7 +82,7 @@ export class Registry {
         
         let a = () => {
         Database.getDB().pool.query(
-            'select * from variables where operation=$1 ORDER BY cost DESC', [operation],
+            'select * from variables where operation=$1 ORDER BY cost ASC', [operation],
             (err, resultId) => {
                 if(err) {
                     console.log(err);

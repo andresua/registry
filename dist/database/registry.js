@@ -71,7 +71,7 @@ class Registry {
         let correlationId = request.HeaderData.correlationId;
         let message;
         let a = () => {
-            pgPool_1.Database.getDB().pool.query('select * from variables where operation=$1 ORDER BY cost DESC', [operation], (err, resultId) => {
+            pgPool_1.Database.getDB().pool.query('select * from variables where operation=$1 ORDER BY cost ASC', [operation], (err, resultId) => {
                 if (err) {
                     console.log(err);
                     message = "Problemas al leer el url en el Marketplace";
