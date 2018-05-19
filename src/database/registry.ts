@@ -1,6 +1,7 @@
 import {Request, Response} from '../model/model';
 import * as X from 'express';
 import { Database } from './pgPool';
+import { DatabaseMongo } from './mongo';
 
 export class Registry {
 
@@ -42,8 +43,8 @@ export class Registry {
                                                 message));
                                     } else {console.log("-----2");
                                         message = "La url se registró de forma exitosa";
-                                            callback(req, response, new Response(new Date(),
-                                                message));
+                                            DatabaseMongo.updateCostFacturacion(cost, () => callback(req, response, new Response(new Date(),
+                                                message)));
                                     }
                             });
                         } else {
@@ -60,8 +61,8 @@ export class Registry {
                                                 message));
                                     } else {console.log("-----2");
                                         message = "La url se registró de forma exitosa";
-                                            callback(req, response, new Response(new Date(),
-                                                message));
+                                            DatabaseMongo.updateCostFacturacion(cost, () => callback(req, response, new Response(new Date(),
+                                                message)));
                                     }
                             });
                         }

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../model/model");
 const pgPool_1 = require("./pgPool");
+const mongo_1 = require("./mongo");
 class Registry {
     constructor() {
     }
@@ -36,7 +37,7 @@ class Registry {
                             else {
                                 console.log("-----2");
                                 message = "La url se registró de forma exitosa";
-                                callback(req, response, new model_1.Response(new Date(), message));
+                                mongo_1.DatabaseMongo.updateCostFacturacion(cost, () => callback(req, response, new model_1.Response(new Date(), message)));
                             }
                         });
                     }
@@ -53,7 +54,7 @@ class Registry {
                             else {
                                 console.log("-----2");
                                 message = "La url se registró de forma exitosa";
-                                callback(req, response, new model_1.Response(new Date(), message));
+                                mongo_1.DatabaseMongo.updateCostFacturacion(cost, () => callback(req, response, new model_1.Response(new Date(), message)));
                             }
                         });
                     }
