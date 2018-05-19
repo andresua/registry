@@ -10,7 +10,8 @@ class DatabaseMongo {
         }
         mongodb_1.MongoClient.connect(DatabaseMongo.url, (err, client) => {
             let costoCol = client.db(DatabaseMongo.dbName).collection('costo');
-            costoCol.drop(() => client.db(DatabaseMongo.dbName).collection('costo').insert({ "value": costo }, () => callback()));
+            costoCol.insert({ "value": costo }, () => callback());
+            // costoCol.drop(() => client.db(DatabaseMongo.dbName).collection('costo').insert({"value": costo}, () => callback()));
         });
     }
 }
